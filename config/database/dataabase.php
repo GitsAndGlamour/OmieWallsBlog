@@ -14,6 +14,7 @@ private class db {
   private $user_name = '';
   private $password = '';
   private $db_name = '';
+  private $port = '';
 
      /**
   * __construct
@@ -34,6 +35,15 @@ private class db {
     return void;
   }
 
+  public function __construct($user_name, $password, $db_name, $port) {
+    $this->host_name = 'localhost';
+    $this->user_name = $user_name;
+    $this->password = $passowrd;
+    $this->db_name = $db_name;
+    $this->port = $port;
+
+    return void;
+  }
     /**
   * db_connect
   * Variable function uses properties set-up in the constructor function and
@@ -41,7 +51,14 @@ private class db {
   * @return SQLi object $connection - database connection
   */
   public function db_connect()
-    $connection = new sqli ($this->host_name, $this->user_name, $this->password, $this->db_name);
+    if ($this->port != '')
+    {
+      $connection =  @mysqli_connect($this->hostname, $this->username, $this->password, $this->db_name, $this->port);
+    }
+    else
+    {
+      $connection = @mysqli_connect($this->hostname, $this->username, $this->password, $this->db_name);
+    }
 
     return $connection;
   }
