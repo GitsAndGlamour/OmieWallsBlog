@@ -1,12 +1,15 @@
 <?php
 /*******************************************************************************
-    Require Autoloaders
+    Require Files
 *******************************************************************************/
  /* Requite Composer Autoloader */
  require 'vendor/autoload.php';
 
  /* Require Database Class */
- require 'config/database/database.php';
+ require 'database/database.php';
+
+ /* Require Config.php */
+ require 'config.php';
 
  /*******************************************************************************
      Set-up Defaults
@@ -21,6 +24,7 @@
  $application = new \Slim\Slim();
 
 /* Temporarily Route HTTP requests to echo statements using Slim get function */
+/* TODO: Create Router.php for routing HTTP requests*/
  function addr_router($address, $application) {
    $application->get("'/" . $address . "'", function() {
      echo "Hello, this is the " . $address . " page.";
@@ -36,7 +40,7 @@
      Database Connection Set-up
 *******************************************************************************/
  /* Instantiation of Database Class */
- $db = new db('root', 'root', 'main');
+ $db = new db(db_username, db_password, db_name, db_port);
 
  /* Connect to Server */
  $connection = $db->db_connect();
