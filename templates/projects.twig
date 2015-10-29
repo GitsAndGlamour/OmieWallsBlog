@@ -1,0 +1,57 @@
+{% extends 'main.twig' %}
+
+{% block content %}
+<!-- TODO: Each page's different header image goes here. -->
+<div class = "headerimg" id = {% block headername %}"projects_headerimg"{% endblock headername %}>
+{% block headerimg %}
+  <img id = "projects_header_img" src = 'img/projectsheader.jpg' alt = 'projects header image'>
+{% endblock headerimg %}
+
+<main id = {% block pagename %}"projects_page"{% endblock pagename %} role = "main">
+{% block main %}
+  <div id = "projects">
+		<table>
+			<tr id = "projects_table_header">
+				<td>
+					<p>Project Title</p>
+				</td>
+				<td>
+					<p>Company</p>
+				</td>
+				<td>
+					<p>Completion</p>
+				</td>
+				<td>
+					<p>Description</p>
+				</td>
+				<td>
+					<p>Reference</p>
+				</td>
+				<td>
+					<p>Skills</p>
+				</td>
+			</tr>
+			<tr class = "projects_table_row" id = "projects_table_row_proj_id">
+				<td>
+					<p class = "proj_name" id = "name_proj_id">Project Title</p>
+				</td>
+				<td>
+					<p class = "proj_company" id = "company_proj_id">Company</p>
+				</td>
+				<td>
+					<p class = "proj_end_date" id = "date_proj_id">Completion</p>
+				</td>
+				<td>
+					<p class = "proj_desc" id = "desc_proj_id">Description</p>
+				</td>
+				<td>
+					<p class = "proj_link" id = "link_proj_id">Reference</p>
+				</td>
+				<td>
+					<p class = "proj_tags" id = "tags_proj_id">Skills</p>
+				</td>
+			</tr>
+		</table>
+  </div>
+{% endblock main %}
+{% endblock content %}

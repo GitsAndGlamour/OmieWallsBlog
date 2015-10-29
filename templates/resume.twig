@@ -1,0 +1,33 @@
+{% extends 'main.twig' %}
+
+{% block content %}
+<!-- TODO: Each page's different header image goes here. -->
+<div class = "headerimg" id = {% block headername %}"resume_headerimg"{% endblock headername %}>
+{% block headerimg %}
+  <img id = "resume_header_img" src = 'img/resumeheader.jpg' alt = 'resume header image'>
+{% endblock headerimg %}
+
+<main id = {% block pagename %}"resume_page"{% endblock pagename %} role = "main">
+{% block main %}
+<table>
+  <div id = "resume_title">
+    {% include 'resume-title.twig' %}
+  </div>
+  <div id = "resume_objective">
+    {% include 'resume-objective.twig' %}
+  </div>
+  <div id = "resume_education">
+    {% include 'resume-education.twig' %}
+  </div>
+  <div id = "resume_employment">
+    {% include 'resume-employment.twig' %}
+  </div>
+  <div id = "resume_certifications">
+    {% include 'resume-certifications.twig' %}
+  </div>
+  <div id = "resume_skills">
+    {% include 'resume-skills.twig' %}
+  </div>
+</table>
+{% endblock main %}
+{% endblock content %}

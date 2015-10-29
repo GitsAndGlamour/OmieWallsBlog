@@ -1,0 +1,22 @@
+{% extends 'main.twig' %}
+
+{% block content %}
+<!-- TODO: Each page's different header image goes here. -->
+<div class = "headerimg" id = {% block headername %}"blog_headerimg"{% endblock headername %}>
+{% block headerimg %}
+  <img id = "blog_header_img" src = 'img/blogheader.jpg' alt = 'Blog header image'>
+{% endblock headerimg %}
+
+<main id = {% block pagename %}"blog_page"{% endblock pagename %} role = "main">
+{% block main %}
+  <div id = "blog_title">
+    {% include 'blog-title.twig' %}
+  </div>
+  <div id = "blog_nav">
+    {% include 'blog-nav.twig' %}
+  </div>
+  <div id = "blog_container">
+    {% include 'blog-container.twig' %}
+  </div>
+{% endblock main %}
+{% endblock content %}

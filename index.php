@@ -1,51 +1,43 @@
 <?php
-/*******************************************************************************
-    Require Files
-*******************************************************************************/
- /* Requite Composer Autoloader */
- require 'vendor/autoload.php';
 
- /* Require Database Class */
- require 'database/database.php';
+require 'vendor/autoload.php';
+date_default_timezone_set ('America/New_York');
 
- /* Require Config.php */
- require 'config.php';
+$app = new \Slim\Slim(array(
+  'view' => new \Slim\Views\Twig()
+));
 
- /*******************************************************************************
-     Set-up Defaults
- *******************************************************************************/
- /* Set Default Timezone */
- date_default_timezone_set('America/New_York');
+$view = $app->view();
+$view->parserOptions = array(
+  'debug' => true
+);
 
-/*******************************************************************************
-    Slim Framework Set-up
-*******************************************************************************/
- /* Instantiation of Slim Class */
- $application = new \Slim\Slim();
+$view->parserExternsions = array(
+  new \Slim\Views\TwigExtension(),
+);
 
-/* Temporarily Route HTTP requests to echo statements using Slim get function */
-/* TODO: Create Router.php for routing HTTP requests*/
- function addr_router($address, $application) {
-   $application->get("'/" . $address . "'", function() {
-     echo "Hello, this is the " . $address . " page.";
-   })
- }
- $this->addr_router(null, $application);
- $this->addr_router('test', $application);
+$app->get('/', function() use($app){
+    $app->render('main.twig');
+});
 
-/* Run Slim Framework */
- $application->run();
+$app->get('/contact', function() use($app){
+    $app->render('contact.twig');
+});
 
-/*******************************************************************************
-     Database Connection Set-up
-*******************************************************************************/
- /* Instantiation of Database Class */
- $db = new db(db_username, db_password, db_name, db_port);
+$app->get('/about', function() use($app){
+    $app->render('about.twig');
+});
 
- /* Connect to Server */
- $connection = $db->db_connect();
+$app->get('/training', function() use($app){
+    $app->render('training.twig');
+});
 
-/* Test Connection to Server */
- $test_connection = $db->db_connect_fail($connection);
+$app->get('/blog', function() use($app){
+    $app->render('blog.twig');
+});
 
- ?>
+$app->get('/resume', function() use($app){
+    $app->render('resume.twig');
+});
+
+$app->run();

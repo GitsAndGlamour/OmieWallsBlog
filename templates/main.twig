@@ -1,0 +1,42 @@
+<!-- Doctype -->
+<!DOCTYPE html>
+
+<html>
+
+<!-- Head Tag -->
+  <head>
+    {% include 'head.twig' %}
+  </head>
+
+<!-- Body Tag -->
+  <body>
+<!-- Header Tag -->
+    <header>
+      {% include 'header.twig' %}
+    </header>
+
+<!-- Section Tag -->
+    <section>
+<!-- Navigation Tag -->
+      <nav>
+           {% include 'sidenav.twig' %}
+      </nav>
+
+<!-- Main Tag:
+  -  Page Template Insertion -->
+        {% block content %}
+<!-- Home Page Content -->
+          {% include 'content.twig' %}
+        {% endblock content %}
+      </main>
+    </section>
+
+<!-- Footer Tag -->
+    <footer>
+      {% include 'footer.twig' %}
+    </footer>
+
+<!-- Script Tags -->
+    {% include 'scripts.twig' %}
+  </body>
+</html>

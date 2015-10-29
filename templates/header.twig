@@ -1,0 +1,31 @@
+  <!-- TODO: Logo goes here. -->
+<img id = "logo_img" src = "img/logo.jpg" alt = "Logo Image">
+
+<div id = "search_bar">
+  <!-- TODO: Search bar goes here. -->
+  <input id = "search_bar" type = "text" name = "search" placeholder = "Search" maxlength = 30>
+  <!-- TODO: Search button goes here. -->
+  <button id = "search_btn" type = "submit" name = "search" formaction = "get">go</button>
+</div>
+  <!-- TODO: Advanced search Option goes here -->
+  <p>Advanced search? <input type = "checkbox" id = "adv_search_box"></p>
+<div id = "adv_search">
+  <form>
+      <p>Search for...</p>
+    <table>
+    <tr>
+      <td><label><input type = "checkbox" class = "search_filter_box" id = "blog_filter_box"> Blogs</label></td>
+      <td><label><input type = "checkbox" class = "search_filter_box" id = "project_filter_box"> Projects</label></td>
+      <td><label><input type = "checkbox" class = "search_filter_box" id = "course_filter_box"> Courses</label></td>
+      <td><label><input type = "checkbox" class = "search_filter_box" id = "resume_filter_box"> Resume</label></td>
+    </tr>
+    <tr>
+      <td><label><input type = "checkbox" class = "search_filter_box" id = "web_filter_box"> Web Resources</label></td>
+      <td><label><input type = "checkbox" class = "search_filter_box" id = "book_filter_box"> Books</label></td>
+      <td><label><input type = "checkbox" class = "search_filter_box" id = "misc_filter_box"> Miscelaneous</label></td>
+      <td><button id = "adv_search_btn" type = "submit" name = "adv_search" formaction = "get">Search</button></td>
+
+    </tr>
+  </table>
+  </form>
+</div>

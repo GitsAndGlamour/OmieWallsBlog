@@ -1,0 +1,63 @@
+{% extends 'main.twig' %}
+
+{% block content %}
+<!-- TODO: Each page's different header image goes here. -->
+<div class = "headerimg" id = {% block headername %}"training_headerimg"{% endblock headername %}>
+{% block headerimg %}
+  <img id = "training_header_img" src = 'img/trainingheader.jpg' alt = 'training header image'>
+{% endblock headerimg %}
+
+<main id = {% block pagename %}"training_page"{% endblock pagename %} role = "main">
+{% block main %}
+  <div id = "training">
+		<table>
+			<tr id = "training_table_header">
+				<td>
+					<p>Course Name</p>
+				</td>
+				<td>
+					<p>Company</p>
+				</td>
+				<td>
+					<p>Completion</p>
+				</td>
+				<td>
+					<p>Description</p>
+				</td>
+				<td>
+					<p>Reference</p>
+				</td>
+				<td>
+					<p>Rating</p>
+				</td>
+				<td>
+					<p>Skills</p>
+				</td>
+			</tr>
+			<tr class = "training_table_row" id = "training_table_row_cors_id">
+				<td>
+					<p class = "cors_name" id = "name_cors_id">Course Name</p>
+				</td>
+				<td>
+					<p class = "cors_company" id = "company_cors_id">Company</p>
+				</td>
+				<td>
+					<p class = "cors_end_date" id = "date_cors_id">Completion</p>
+				</td>
+				<td>
+					<p class = "cors_desc" id = "desc_cors_id">Description</p>
+				</td>
+				<td>
+					<p class = "cors_link" id = "link_cors_id">Reference</p>
+				</td>
+				<td>
+					<p class = "cors_rating" id = "rating_cors_id">Rating</p>
+				</td>
+				<td>
+					<p class = "cors_tags" id = "tags_cors_id">Skills</p>
+				</td>
+			</tr>
+		</table>
+  </div>
+{% endblock main %}
+{% endblock content %}

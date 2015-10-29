@@ -1,0 +1,1 @@
+[28-Oct-2015 08:06:12 UTC] PHP Fatal error:  Class 'Slim\Views\Twig' not found in /home/orwalls/public_html/index.php on line 20

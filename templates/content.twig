@@ -1,0 +1,32 @@
+{% block content %}
+	<!-- TODO: Each page's different header image goes here. -->
+	<div class = "headerimg" id = {% block headername %}"page_hederimg"{% endblock headername %}>
+	{% block headerimg %}
+	 <img id = "main_header_img" src="img/mainheader.jpg" alt = "Main header img">
+	{% endblock headerimg %}
+	</div>
+	   <!-- Each page's different content goes here.
+	- TODO: Build a variable function that will load the appropriate
+	- page_container based on page name parsed from the HTTP request.
+	-->
+	<main id = {% block pagename %}"main_page"{% endblock pagename %} role = "main">
+
+	<p id = "title">Main title  <br>
+								Main subtitle <br>
+								Main author  dd/mm/yyyy  tag, tag, tag, tag, tag
+	</p>
+	<p id = "navigation">Main navigation</p>
+	<p id = "container">Main container</p>
+	<p id = "title">Main title  <br>
+								Main subtitle <br>
+								Main author  dd/mm/yyyy  tag, tag, tag, tag, tag
+	</p>
+	<p id = "navigation">Main navigation</p>
+	<p id = "container">Main container</p>
+	<p id = "title">Main title    <br>
+								Main subtitle <br>
+								Main author  dd/mm/yyyy  tag, tag, tag, tag, tag
+	</p>
+	<p id = "navigation">Main navigation</p>
+	<p id = "container">Main container</p>
+{% endblock content %}

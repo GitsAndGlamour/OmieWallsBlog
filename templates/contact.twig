@@ -1,0 +1,27 @@
+{% extends 'main.twig' %}
+
+{% block content %}
+	<!-- TODO: Each page's different header image goes here. -->
+	<div class = "headerimg" id = {% block headername %}"contct_headerimg"{% endblock headername %}>
+{% block headerimg %}
+  <img id = "contact_header_img" src = 'img/contactheader.jpg' alt = 'Contact header image'>
+{% endblock headerimg %}
+
+<main id = {% block pagename %}"contact_page"{% endblock pagename %} role = "main">
+{% block main %}
+	<div id = "contact_form">
+		<p>Contact form</p>
+		<form action = "url/text.text" method = "post">
+			<!-- Full Name -->
+			<input type = "text" name = "full_name" placeholder="Full Name">
+			<!-- Email -->
+			<input type = "email" name = "email" placeholder="E-mail">
+			<!-- Message -->
+			<textarea rows = "4" cols = "75">
+				Textarea
+			</textarea>
+			<button type = "submit" formmethod = "post" formaction = "url/txt.txt">Send</button>
+		</form>
+	</div>
+{% endblock main %}
+{% endblock content %}
